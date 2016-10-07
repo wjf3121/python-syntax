@@ -77,8 +77,8 @@ set cpo&vim
 "   built-in below (use 'from __future__ import print_function' in 2)
 " - async and await were added in Python 3.5 and are soft keywords.
 "
-syn keyword pythonStatement	class nextgroup=pythonClass skipwhite
-syn keyword pythonStatement	def nextgroup=pythonFunction skipwhite
+syn keyword pythonDef		class nextgroup=pythonClass skipwhite
+syn keyword pythonDef		def nextgroup=pythonFunction skipwhite
 
 syn keyword pythonStatement	False, None, True
 syn keyword pythonStatement	as assert break continue del exec global
@@ -319,6 +319,7 @@ if version >= 508 || !exists("did_python_syn_inits")
   endif
 
   " The default highlight links.  Can be overridden later.
+  HiLink pythonDef		Typedef
   HiLink pythonStatement	Statement
   HiLink pythonConditional	Conditional
   HiLink pythonRepeat		Repeat
@@ -343,7 +344,7 @@ if version >= 508 || !exists("did_python_syn_inits")
     HiLink pythonNumber		Number
   endif
   if !exists("python_no_builtin_highlight")
-    HiLink pythonBuiltin	Function
+    HiLink pythonBuiltin	pyBuiltIn
   endif
   if !exists("python_no_exception_highlight")
     HiLink pythonExceptions	Structure
