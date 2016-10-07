@@ -337,14 +337,15 @@ if version >= 508 || !exists("did_python_syn_inits")
   HiLink pythonEscape		Special
 
   " Classes, Functions
-  HiLink pythonClass    Type
+  HiLink pythonClass    Function
   HiLink pythonFunction Function
+  HiLink pythonBrackets           Normal
 
   if !exists("python_no_number_highlight")
     HiLink pythonNumber		Number
   endif
   if !exists("python_no_builtin_highlight")
-    HiLink pythonBuiltin	pyBuiltIn
+    HiLink pythonBuiltin	Keyword
   endif
   if !exists("python_no_exception_highlight")
     HiLink pythonExceptions	Structure
@@ -364,11 +365,6 @@ if version >= 508 || !exists("did_python_syn_inits")
   if !exists("python_no_operator_highlight")
     HiLink pythonExtraOperator       Operator
     HiLink pythonExtraPseudoOperator Operator
-  endif
-  if !exists("python_no_parameter_highlight")
-    HiLink pythonBrackets           Normal
-    HiLink pythonClassParameters    pyFuncArgs
-    HiLink pythonFunctionParameters pyFuncArgs
   endif
 
   delcommand HiLink
