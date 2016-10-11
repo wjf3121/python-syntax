@@ -319,7 +319,6 @@ if version >= 508 || !exists("did_python_syn_inits")
   endif
 
   " The default highlight links.  Can be overridden later.
-  HiLink pythonDef		Typedef
   HiLink pythonStatement	Statement
   HiLink pythonConditional	Conditional
   HiLink pythonRepeat		Repeat
